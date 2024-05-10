@@ -10,10 +10,31 @@
     {# Tailwind Styles #}
     {% tailwind_css %}
 
+    {# Flickity #}
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>  
+
+    {# Google Fonts #}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    {% block content %}
+    <div class="p-4 sm:p-6 lg:p-8">
+        {% include 'psite/_partials/header.html' %}
 
-    {% endblock %}
+        {% block content %}
+    
+        {% endblock %}
+    </div>
+
+    {% block extra_js %}{% endblock %}
+    
 </body>
 </html>

@@ -42,7 +42,12 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                'serif': ['EB Garamond'],
+                'sans': ['Open Sans'],
+            },
+        },
     },
     plugins: [
         /**

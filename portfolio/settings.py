@@ -1,5 +1,5 @@
 from pathlib import Path
-import json
+import json, os
 
 # Load values from json
 with open('../keys.json') as keys:
@@ -12,7 +12,7 @@ is_dev = key_data["django_env"] == "development"
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = key_data["django_secret_key"],
-DEBUG = False if is_dev else True
+DEBUG = True if is_dev else False
 
 production_hosts = [
     "andrewforrester.dev",
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
 
 # Tailwind settings
 TAILWIND_APP_NAME = 'theme'
-INTERNAL_IPS = ["127.0.0.1",]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -127,7 +126,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
