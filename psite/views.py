@@ -6,3 +6,11 @@ def home(request):
     }
 
     return render(request, 'psite/home.html', context)
+
+
+def scraper(request):
+    context = {
+
+    }
+
+    return render(request, 'psite/misc/scraper.html', context)
